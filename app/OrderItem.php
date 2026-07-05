@@ -1,0 +1,21 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class OrderItem extends Model
+{
+    protected $fillable = [
+        'order_id',
+        'product_id',
+        'quantity',
+        'price'
+    ];
+
+    // สินค้าที่อยู่ในรายการขาย
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
+}
